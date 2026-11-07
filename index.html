@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashutosh Thapa</title>
+<meta name="description" content="Ashutosh Thapa, CS senior at the University of Louisiana at Monroe. Cloud security, ML systems and full stack. Graduating May 2027.">
+<meta property="og:title" content="Ashutosh Thapa">
+<meta property="og:description" content="Detecting stolen AWS keys, planning degrees with a prerequisite graph, keeping LLM apps up. Live demos on the page.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B1630">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230B1630'/%3E%3Crect x='19' y='7' width='6' height='6' fill='%23D3203B'/%3E%3Ctext x='5' y='25' font-family='monospace' font-size='15' font-weight='700' fill='%23F1F2F4'%3EAT%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Martian+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  document.documentElement.className = 'js';
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  try { if (sessionStorage.getItem('seen')) document.documentElement.classList.add('seen'); } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#work">Skip to projects</a>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-row"><span>ashutosh thapa</span><span id="loader-n">000</span></div>
+  <div class="loader-bar"><i id="loader-bar"></i></div>
+  <div class="loader-row loader-sub"><span id="loader-step">loading fonts</span><span>monroe, la</span></div>
+</div>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursor-label"></span></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Back to top"><span class="brand-sq"></span>thapa<span class="muted">.dev</span></a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="#work" data-roll>Work</a>
+    <a href="#lab" data-roll>Lab</a>
+    <a href="#path" data-roll>Path</a>
+    <a href="#contact" data-roll>Contact</a>
+    <i class="nav-ind" aria-hidden="true"></i>
+  </nav>
+  <div class="nav-tools">
+    <button class="tool" id="palette-open" aria-label="Open command menu" data-cursor="⌘K"><kbd>⌘K</kbd></button>
+    <button class="tool" id="theme-toggle" aria-label="Switch color theme" data-cursor="theme">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.5a7.5 7.5 0 0 1 0 15z" fill="currentColor"/></svg>
+    </button>
+    <a class="btn btn-solid btn-sm magnetic hide-sm" href="assets/Ashutosh_Thapa_Resume.pdf" data-roll>Resume</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav class="menu-links" aria-label="Menu">
+    <a href="#work"><small>01</small>Work</a>
+    <a href="#lab"><small>02</small>Lab</a>
+    <a href="#path"><small>03</small>Path</a>
+    <a href="#contact"><small>04</small>Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="mailto:ashutoshthapa11@outlook.com">ashutoshthapa11@outlook.com</a>
+    <a href="https://github.com/thapaashutosh" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/ashutoshthapa" rel="noopener">LinkedIn</a>
+    <a href="assets/Ashutosh_Thapa_Resume.pdf">Resume</a>
+  </div>
+</div>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow" data-reveal><span class="sq"></span>Open to new grad roles &middot; May 2027</p>
+    <h1 class="kinetic" id="kinetic" aria-label="Ashutosh Thapa">
+      <span class="k-line" aria-hidden="true">Ashutosh</span>
+      <span class="k-line" aria-hidden="true">Thapa</span>
+    </h1>
+    <p class="hero-sub" data-reveal>CS senior at ULM. I build
+      <span class="rot" id="rot" aria-live="off"><span>detection pipelines for AWS</span><span>ML models that run on a CPU</span><span>LLM gateways that stay up</span><span>web apps with real data behind them</span></span>
+    </p>
+    <div class="hero-cta" data-reveal>
+      <a class="btn btn-solid magnetic" href="#work" data-roll>See the work</a>
+      <a class="btn btn-line magnetic" href="#lab" data-roll>Play with the demos</a>
+    </div>
+  </div>
+
+  <figure class="hero-3d" data-cursor="drag">
+    <canvas id="cloud" aria-label="3D point cloud of API calls. Red squares are outliers being isolated by random cuts."></canvas>
+    <figcaption>
+      <span class="cap-k">fig. 1</span>
+      <span id="cloud-hud">1,400 API calls, 14 outliers</span>
+    </figcaption>
+  </figure>
+
+  <div class="hero-foot">
+    <span>Monroe, LA &middot; <span id="clock">--:--</span> CT</span>
+    <span class="hide-sm">From Chitwan, Nepal</span>
+    <a href="#work" class="scroll-cue">scroll<i></i></a>
+  </div>
+</section>
+
+<section class="about wrap" id="about">
+  <p class="about-big" data-split>Most of what I build sits where cloud infrastructure meets machine learning. I like problems with a number attached: how many attacks got caught, how many dollars the cache saved, how many semesters the plan takes.</p>
+  <dl class="facts" data-reveal>
+    <div><dt>school</dt><dd>University of Louisiana at Monroe, B.S. Computer Science</dd></div>
+    <div><dt>graduating</dt><dd>May 2027</dd></div>
+    <div><dt>looking for</dt><dd>Software, ML or cloud engineering, full time</dd></div>
+    <div><dt>certified</dt><dd>AWS AI Practitioner, AWS Cloud Practitioner, EC-Council EHE</dd></div>
+  </dl>
+</section>
+
+<section class="work wrap" id="work">
+  <header class="sec-head">
+    <span class="sec-n">01</span>
+    <h2 data-split>Selected work</h2>
+    <p class="sec-note" data-reveal>Four projects, each with a diagram of how it fits together. Three of them have a live demo in the Lab.</p>
+  </header>
+
+  <div class="stack">
+    <article class="card" data-cursor="view">
+      <div class="card-top"><span class="card-n">01</span><span class="pill">building</span></div>
+      <div class="card-body">
+        <div class="card-text">
+          <h3>Tripwire</h3>
+          <p class="card-lede">Catches stolen AWS keys from CloudTrail and sends one Slack alert per incident, not one per event.</p>
+          <p>Every identity gets its own Isolation Forest over 7 rarity features: API, source IP, region, user agent, hour, burst rate and error rate. Flagged calls are grouped by identity and IP and tagged with MITRE ATT&amp;CK techniques. Bedrock writes the summary and names the key to rotate.</p>
+          <ul class="metrics">
+            <li><b data-count="1">1</b><span>alert per attack, 5 of 5 test weeks</span></li>
+            <li><b data-count="0.33" data-dec="2" data-suffix="%">0.33%</b><span>false positives on unseen traffic</span></li>
+            <li><b data-count="0.12" data-dec="2" data-suffix=" ms">0.12 ms</b><span>to score one call</span></li>
+          </ul>
+          <p class="stack-tags">Python · Lambda · EventBridge · DynamoDB · Bedrock · Terraform</p>
+          <div class="card-cta">
+            <a class="btn btn-solid magnetic" href="#lab" data-tab="tripwire" data-roll>Run the demo</a>
+            <a class="btn btn-line magnetic" href="https://github.com/thapaashutosh/tripwire" rel="noopener" data-roll>Source</a>
+          </div>
+        </div>
+        <div class="diagram" data-diagram="tripwire"></div>
+      </div>
+    </article>
+
+    <article class="card" data-cursor="view">
+      <div class="card-top"><span class="card-n">02</span><span class="pill">building</span></div>
+      <div class="card-body">
+        <div class="card-text">
+          <h3>HawkPlan</h3>
+          <p class="card-lede">Turns the ULM catalog into a semester by semester plan, and answers advising questions with citations.</p>
+          <p>The catalog is parsed into a prerequisite graph in Postgres. The planner is a topological sort with list scheduling: each term takes the available courses on the longest remaining chain first, under a credit cap and fall or spring only offerings. Questions go through a RAG pipeline over pgvector, and every answer cites its catalog section.</p>
+          <ul class="metrics">
+            <li><b data-count="50">50</b><span>real advising questions in the eval set</span></li>
+            <li><b data-count="3">3</b><span>CS tracks planned end to end</span></li>
+          </ul>
+          <p class="stack-tags">Next.js · TypeScript · PostgreSQL · pgvector · Python · RAG</p>
+          <div class="card-cta">
+            <a class="btn btn-solid magnetic" href="#lab" data-tab="hawkplan" data-roll>Run the demo</a>
+          </div>
+        </div>
+        <div class="diagram" data-diagram="hawkplan"></div>
+      </div>
+    </article>
+
+    <article class="card" data-cursor="view">
+      <div class="card-top"><span class="card-n">03</span><span class="pill">building</span></div>
+      <div class="card-body">
+        <div class="card-text">
+          <h3>Relay</h3>
+          <p class="card-lede">An LLM gateway that stops you paying twice for the same question and stays up when a provider goes down.</p>
+          <p>Prompts above 0.95 cosine similarity get the stored answer from a Redis semantic cache, with hit rate and dollars saved tracked per day. Every API key gets a token bucket. When the main provider starts returning 503s, a circuit breaker fails traffic over to the second one, checked with k6 load tests.</p>
+          <ul class="metrics">
+            <li><b data-count="0.95" data-dec="2">0.95</b><span>cosine threshold for a cache hit</span></li>
+            <li><b data-count="0">0</b><span>client errors in the failover sim</span></li>
+          </ul>
+          <p class="stack-tags">TypeScript · Node.js · Redis · PostgreSQL · Docker · k6</p>
+          <div class="card-cta">
+            <a class="btn btn-solid magnetic" href="#lab" data-tab="relay" data-roll>Run the demo</a>
+          </div>
+        </div>
+        <div class="diagram" data-diagram="relay"></div>
+      </div>
+    </article>
+
+    <article class="card" data-cursor="view">
+      <div class="card-top"><span class="card-n">04</span><span class="pill">building</span></div>
+      <div class="card-body">
+        <div class="card-text">
+          <h3>Satya</h3>
+          <p class="card-lede">Satya means truth in Nepali. A fake news classifier that labels posts as you scroll, cheap enough to run on a CPU.</p>
+          <p>DistilBERT and RoBERTa are fine tuned on the same LIAR and FakeNewsNet splits and picked on per class precision, recall and macro F1. LIAR is imbalanced and accuracy hides it. The winner is exported to ONNX with INT8 quantization and served from FastAPI on ECS. A Chrome extension sends every visible post in one request per scroll.</p>
+          <ul class="metrics">
+            <li><b data-count="4" data-prefix="~" data-suffix="x">~4x</b><span>smaller weights after INT8</span></li>
+            <li><b data-count="1">1</b><span>request per scroll, not per post</span></li>
+          </ul>
+          <p class="stack-tags">PyTorch · Hugging Face · ONNX · FastAPI · Docker · AWS ECS</p>
+        </div>
+        <div class="diagram" data-diagram="satya"></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="lab wrap" id="lab">
+  <header class="sec-head">
+    <span class="sec-n">02</span>
+    <h2 data-split>The lab</h2>
+    <p class="sec-note" data-reveal>The real algorithms, written from scratch in JavaScript and running in your browser. Synthetic data, nothing sent anywhere.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Demos">
+    <button role="tab" id="tab-tripwire" aria-controls="demo-tripwire" aria-selected="true">Tripwire<small>isolation forest</small></button>
+    <button role="tab" id="tab-hawkplan" aria-controls="demo-hawkplan" aria-selected="false" tabindex="-1">HawkPlan<small>graph scheduler</small></button>
+    <button role="tab" id="tab-relay" aria-controls="demo-relay" aria-selected="false" tabindex="-1">Relay<small>cache + failover</small></button>
+    <i class="tab-ind" aria-hidden="true"></i>
+  </div>
+
+  <div class="demo" id="demo-tripwire" role="tabpanel" aria-labelledby="tab-tripwire">
+    <p class="demo-help">One week of synthetic CloudTrail traffic for 5 identities, scored by per identity forests. Inject the stolen key, then drag the threshold and watch false positives trade against missed calls.</p>
+    <div class="controls">
+      <button class="btn btn-line btn-sm" data-act="regen">New traffic</button>
+      <button class="btn btn-hot btn-sm" data-act="attack">Inject stolen key</button>
+      <label class="rng">threshold <input type="range" min="0.45" max="0.80" step="0.005" value="0.68" data-ctl="thr"><output data-out="thr">0.680</output></label>
+      <label class="rng">trees <input type="range" min="10" max="200" step="10" value="100" data-ctl="trees"><output data-out="trees">100</output></label>
+    </div>
+    <div class="stats" data-out="stats"></div>
+    <div class="plot-wrap">
+      <canvas class="plot" data-out="plot"></canvas>
+      <div class="tip" data-out="tip" hidden></div>
+    </div>
+    <div class="split">
+      <div>
+        <h4 class="h-mini">Alert that would go to Slack</h4>
+        <pre class="slack" data-out="alert"></pre>
+      </div>
+      <div>
+        <h4 class="h-mini">Top flagged calls</h4>
+        <div class="tbl-scroll"><table class="evt" data-out="events"></table></div>
+      </div>
+    </div>
+    <p class="fine">Attack IPs come from the 203.0.113.0/24 documentation range and the key is AWS's own example key. In the real pipeline Bedrock writes the summary. Here it's a template.</p>
+  </div>
+
+  <div class="demo" id="demo-hawkplan" role="tabpanel" aria-labelledby="tab-hawkplan" hidden>
+    <p class="demo-help">Click a course to mark it done and the plan rebuilds. Hover a course: green is what it needs, red is what it unlocks.</p>
+    <div class="controls">
+      <label class="sel">track
+        <select data-ctl="track"><option value="swe">Software</option><option value="ml">Data and ML</option><option value="sec">Cybersecurity</option></select>
+      </label>
+      <label class="sel">start
+        <select data-ctl="start"><option value="F">Fall</option><option value="S">Spring</option></select>
+      </label>
+      <label class="rng">max credits <input type="range" min="12" max="19" step="1" value="16" data-ctl="cap"><output data-out="cap">16</output></label>
+      <button class="btn btn-line btn-sm" data-act="reset">Clear done</button>
+    </div>
+    <div class="stats" data-out="stats"></div>
+    <div class="plan" data-out="plan"></div>
+    <p class="fine">Sample catalog, simplified. Not the official ULM catalog. F and S mark fall only and spring only courses.</p>
+  </div>
+
+  <div class="demo" id="demo-relay" role="tabpanel" aria-labelledby="tab-relay" hidden>
+    <p class="demo-help">Left: the cache lookup with a hashed n-gram embedding. Right: token bucket and failover at 10 ticks a second. Break provider A and watch traffic move to B.</p>
+    <div class="split split-even">
+      <div class="sub">
+        <h4 class="h-mini">Semantic cache</h4>
+        <form class="ask" data-out="form">
+          <input type="text" data-ctl="prompt" placeholder="Type a prompt" autocomplete="off" aria-label="Prompt">
+          <button class="btn btn-solid btn-sm" type="submit">Send</button>
+        </form>
+        <div class="chips" data-out="samples"></div>
+        <label class="rng">hit threshold <input type="range" min="0.80" max="0.99" step="0.01" value="0.95" data-ctl="cthr"><output data-out="cthr">0.95</output></label>
+        <div class="cache-res" data-out="result"></div>
+        <div class="stats stats-sm" data-out="cstats"></div>
+      </div>
+      <div class="sub">
+        <h4 class="h-mini">Rate limit and failover</h4>
+        <div class="controls controls-tight">
+          <label class="rng">req/s <input type="range" min="1" max="40" step="1" value="12" data-ctl="rps"><output data-out="rps">12</output></label>
+          <label class="rng">refill/s <input type="range" min="1" max="40" step="1" value="15" data-ctl="refill"><output data-out="refill">15</output></label>
+        </div>
+        <div class="controls controls-tight">
+          <button class="btn btn-hot btn-sm" data-act="breakA">provider A: up</button>
+          <button class="btn btn-hot btn-sm" data-act="breakB">provider B: up</button>
+          <button class="btn btn-line btn-sm" data-act="pause">pause</button>
+        </div>
+        <canvas class="plot plot-sm" data-out="strip"></canvas>
+        <div class="legend" data-out="legend"></div>
+        <div class="stats stats-sm" data-out="fstats"></div>
+      </div>
+    </div>
+    <p class="fine">The toy embedding mostly catches near duplicates. A real embedding model scores paraphrases much higher, which is why production can sit at 0.95.</p>
+  </div>
+</section>
+
+<section class="path wrap" id="path">
+  <header class="sec-head">
+    <span class="sec-n">03</span>
+    <h2 data-split>Path so far</h2>
+  </header>
+  <ol class="timeline">
+    <li data-reveal>
+      <span class="tl-when">now</span>
+      <div><h3>Building Tripwire, HawkPlan, Relay and Satya</h3><p>Shipping each one with a public repo, a reproducible eval and a write-up.</p></div>
+    </li>
+    <li data-reveal>
+      <span class="tl-when">until May 2027</span>
+      <div><h3>B.S. Computer Science, University of Louisiana at Monroe</h3><p>Data Structures, Operating Systems, Computer Architecture, Discrete Structures, Mathematical Statistics, and Database Management, where we ran MySQL on our own EC2 instances.</p></div>
+    </li>
+    <li data-reveal>
+      <span class="tl-when">certs</span>
+      <div><h3>AWS AI Practitioner, AWS Cloud Practitioner, EC-Council Ethical Hacking Essentials</h3></div>
+    </li>
+    <li data-reveal>
+      <span class="tl-when">2020 to 2021</span>
+      <div><h3>Volunteer web and IT assistant, Jamnapur Helped Society, Chitwan, Nepal</h3><p>Built and ran the website for earthquake relief fundraising and made the animated appeal videos. Moved donor records off paper and scattered spreadsheets into shared cloud storage the team could search. Kept the office computers running and helped get donations where they were needed.</p></div>
+    </li>
+  </ol>
+
+  <div class="skills" data-reveal>
+    <h4 class="h-mini">Tools, and where I used them</h4>
+    <div class="skill-row" id="skills">
+      <button data-p="tripwire satya hawkplan">Python</button>
+      <button data-p="relay hawkplan">TypeScript</button>
+      <button data-p="">Java</button>
+      <button data-p="hawkplan relay">SQL / PostgreSQL</button>
+      <button data-p="tripwire">AWS Lambda</button>
+      <button data-p="satya">AWS ECS</button>
+      <button data-p="tripwire">Terraform</button>
+      <button data-p="satya relay">Docker</button>
+      <button data-p="relay">Redis</button>
+      <button data-p="hawkplan">Next.js</button>
+      <button data-p="satya">FastAPI</button>
+      <button data-p="satya">PyTorch</button>
+      <button data-p="satya">Hugging Face</button>
+      <button data-p="tripwire">scikit-learn</button>
+      <button data-p="hawkplan">pgvector + RAG</button>
+      <button data-p="tripwire">Bedrock</button>
+      <button data-p="tripwire">GitHub Actions</button>
+      <button data-p="relay">k6</button>
+    </div>
+    <p class="skill-out" id="skill-out" aria-live="polite">Hover a tool to see which project it's in.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <p class="foot-kicker" data-reveal>Hiring for 2027? I reply the same day.</p>
+    <a class="foot-mail" href="mailto:ashutoshthapa11@outlook.com" data-cursor="write">
+      <span class="fm-line">ashutoshthapa11</span><span class="fm-line">@outlook.com</span>
+    </a>
+    <div class="foot-actions">
+      <button class="btn btn-solid magnetic" id="copy-email" data-roll>Copy email</button>
+      <a class="btn btn-line magnetic" href="assets/Ashutosh_Thapa_Resume.pdf" data-roll>Resume PDF</a>
+    </div>
+    <div class="foot-grid">
+      <div><h4>Elsewhere</h4>
+        <a href="https://github.com/thapaashutosh" rel="noopener" data-roll>GitHub</a>
+        <a href="https://linkedin.com/in/ashutoshthapa" rel="noopener" data-roll>LinkedIn</a>
+        <a href="tel:+13185126469" data-roll>(318) 512-6469</a>
+      </div>
+      <div><h4>On this page</h4>
+        <a href="#work" data-roll>Work</a><a href="#lab" data-roll>Lab</a><a href="#path" data-roll>Path</a>
+      </div>
+      <div><h4>Local time</h4><span id="clock2">--:--</span><span class="muted">Monroe, Louisiana</span></div>
+      <div><h4>Shortcuts</h4><span><kbd>⌘K</kbd> or <kbd>/</kbd> menu</span><span><kbd>T</kbd> theme</span></div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Ashutosh Thapa</span>
+      <span>Plain HTML, CSS and JavaScript. No tracking.</span>
+      <a href="#top" class="to-top" data-roll>Back to top</a>
+    </div>
+  </div>
+  <div class="foot-name" aria-hidden="true">THAPA</div>
+</footer>
+
+<div class="palette" id="palette" hidden>
+  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command menu">
+    <input id="palette-input" type="text" placeholder="Go to, copy, open..." autocomplete="off" aria-label="Search commands">
+    <ul id="palette-list" role="listbox"></ul>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> run</span><span><kbd>esc</kbd> close</span></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="js/util.js" defer></script>
+<script src="js/iforest.js" defer></script>
+<script src="js/tripwire.js" defer></script>
+<script src="js/hawkplan.js" defer></script>
+<script src="js/relay.js" defer></script>
+<script src="js/cloud.js" defer></script>
+<script src="js/diagrams.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
