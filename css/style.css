@@ -22,6 +22,7 @@
   --nav-h: 60px;
   color-scheme: light;
 }
+  /* dark mode, either via system preference or explicit data-theme attr */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #070b17; --surface: #0d1427; --surface-2: #141d35; --ink: #e9edf6; --ink-2: #b9c2d6; --muted: #7c87a2;
